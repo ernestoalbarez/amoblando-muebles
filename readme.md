@@ -18,4 +18,4 @@ Este proyecto es una página web de una mueblería, con secciones de Producto, R
 
 ## Despliegue
 
-El proyecto está desplegado en [GitHub Pages](URL_DEL_PROYECTO).
+El proyecto está desplegado en [GitHub Pages](https://ernestoalbarez.github.io/amoblando-muebles/).
