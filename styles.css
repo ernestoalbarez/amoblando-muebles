@@ -1,16 +1,122 @@
+:root {
+    --verde-principal: #0D9F68;
+    --verde-hover: #0B7B5D;
+    --gris-borde: #ccc;
+    --sombra-light: rgba(0, 0, 0, 0.1);
+    --sombra-dark: rgba(0, 0, 0, 0.2);
+    --texto-principal: #333;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     background-color: white;
-    color: #333;
+    color: var(--texto-principal);
 }
 
 header {
-    background-color: #0D9F68; /* Verde metálico */
+    background-color: var(--verde-principal);
     color: white;
     padding: 20px;
     text-align: center;
+}
+
+#carrito-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 20px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#carrito-icono img {
+    width: 30px;
+    height: 30px;
+}
+
+.carrito-icono span {
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+#carrito-count {
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    border-radius: 50%;
+    padding: 2px 8px;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+
+.carrito-sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.carrito-sidebar.open {
+    right: 0;
+    display: block;
+}
+
+.carrito-sidebar h2 {
+    margin-top: 0;
+    color: var(--verde-principal);
+}
+
+.carrito-sidebar button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.carrito-sidebar button:hover {
+    background: #0056b3;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: flex-start;
+    margin-right: auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    #carrito-icono {
+        margin-left: 0;
+    }
 }
 
 nav ul {
@@ -28,9 +134,25 @@ nav a {
     text-decoration: none;
 }
 
+nav a:focus {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
 section {
     margin: 20px 0;
     padding: 20px;
+}
+
+button:hover {
+    background-color: var(--verde-hover);
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+}
+
+button:focus {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
 }
 
 .cards {
@@ -42,13 +164,19 @@ section {
 
 .card {
     background-color: white;
-    border: 1px solid #ccc;
+    border: 1px solid var(--gris-borde);
     border-radius: 8px;
     padding: 15px;
     margin: 10px;
     text-align: center;
     width: calc(25% - 20px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px var(--sombra-light);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px var(--sombra-dark);
 }
 
 .card img {
@@ -57,29 +185,55 @@ section {
 }
 
 .card button {
-    background-color: #0D9F68;
+    background-color: var(--verde-principal);
     color: white;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.description {
+    display: none;
+}
+
+button.expand-btn {
+    background-color: #0D9F68;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+button.expand-btn:hover {
+    background-color: #0B7B5D;
 }
 
 .reseñas-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
     padding: 20px;
 }
 
 .reseña {
     background-color: white;
-    border: 1px solid #ccc;
+    border: 1px solid var(--gris-borde);
     border-radius: 8px;
     padding: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px var(--sombra-light);
     text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.reseña:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px var(--sombra-dark);
 }
 
 .reseña h4 {
@@ -99,31 +253,26 @@ section {
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px var(--sombra-light);
     margin: 20px 0;
 }
 
 h2 {
     text-align: center;
-    color: #0D9F68;
-}
-
-.form-group {
-    position: relative;
-    margin-bottom: 20px;
+    color: var(--verde-principal);
 }
 
 input, textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--gris-borde);
     border-radius: 5px;
     font-size: 16px;
     transition: border-color 0.3s;
 }
 
 input:focus, textarea:focus {
-    border-color: #0D9F68;
+    border-color: var(--verde-principal);
     outline: none;
 }
 
@@ -144,11 +293,11 @@ textarea:not(:placeholder-shown) + label {
     top: 0;
     left: 10px;
     font-size: 12px;
-    color: #0D9F68;
+    color: var(--verde-principal);
 }
 
 button {
-    background-color: #0D9F68;
+    background-color: var(--verde-principal);
     color: white;
     padding: 10px 15px;
     border: none;
@@ -159,11 +308,11 @@ button {
 }
 
 button:hover {
-    background-color: #0B7B5D;
+    background-color: var(--verde-hover);
 }
 
 footer {
-    background-color: #0D9F68;
+    background-color: var(--verde-principal);
     color: white;
     text-align: center;
     padding: 15px;
@@ -172,16 +321,20 @@ footer {
     width: 100%;
     font-size: 14px;
     border-top: 2px solid #fff;
+    line-height: 1.5;
 }
 
 footer p {
-    margin: 0; /* Sin margen */
+    margin: 0;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
     nav ul li {
         display: block;
         margin: 10px 0;
+    }
+
+    .card {
+        width: 100%;
     }
 }
