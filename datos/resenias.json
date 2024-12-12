@@ -1,0 +1,52 @@
+[
+    {
+      "id": 1,
+      "autor": "Homero Simpson",
+      "texto": "El único libro que yo leí en mi vida fue Matar un ruiseñor. ¡Y no me dio ninguna información sobre cómo matar ruiseñores! Y menos cómo juzgar un mueble!!"
+    },
+    {
+      "id": 2,
+      "autor": "Moe Szyslak",
+      "texto": "Bienvenidos a la reseña 411, cada vez que un rufián critique tu futón harás esto: *pasos épicos, japish de escopeta*."
+    },
+    {
+      "id": 3,
+      "autor": "Edna Krabappel",
+      "texto": "Debo reseñarte. ¿Cuánto puntaje daré? Aún no lo decido. ¿Cuántas reseñas dejaré? No puedo decirlo. Pero puedo decirte algo... cada vez que sople el viento, susurrará tu precio 50% OFF."
+    },
+    {
+      "id": 4,
+      "autor": "Jefe Górgory",
+      "texto": "Si estás leyendo esta reseña es porque tienes mucho tiempo, o muy poco."
+    },
+    {
+      "id": 5,
+      "autor": "Lisa Simpson",
+      "texto": "Un consumidor educado es el mejor cliente. Por eso te recomiendo leer la letra pequeña antes de comprar este producto... pero probablemente no lo harás."
+    },
+    {
+      "id": 6,
+      "autor": "Bart Simpson",
+      "texto": "Yo no fui. Bueno, excepto cuando me pediste dejar esta reseña. Entonces sí fui."
+    },
+    {
+      "id": 7,
+      "autor": "Apu Nahasapeemapetilon",
+      "texto": "¡Gracias, vuelva pronto! Aunque viendo los precios, quizá no tan pronto como esperaba."
+    },
+    {
+      "id": 8,
+      "autor": "Abraham Simpson",
+      "texto": "Recuerdo cuando este producto costaba un níquel y venía con una anécdota sobre cebollas. ¡Las cosas ya no son como antes!"
+    },
+    {
+      "id": 9,
+      "autor": "Milhouse Van Houten",
+      "texto": "¡Esto es lo mejor que he probado desde las pastillas para la nariz azul! ¿Quién dice que no puedes comprar la felicidad?"
+    },
+    {
+      "id": 10,
+      "autor": "Señor Burns",
+      "texto": "Excelente... Pero podría ser un poco más barato. Incluso los millonarios amamos las ofertas."
+    }
+]
